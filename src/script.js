@@ -1,5 +1,5 @@
-document.getEelementById('#container')
-document.getEelementById('#night-mode-on')
-document.getEelementById('#night-mode-Container')
-document.getEelementById('#password-Viewer')
-document.getEelementById('#code-generator')
+// const container = document.getEelementById('container');
+// const nightModeOn = document.getEelementById('night-mode-on');
+// const nightModeOnContainer = document.getEelementById('night-mode-container');
+// const PasswordViewer = document.getEelementById('password-viewer');
+// const codeGenerator = document.getEelementById('code-generator');
