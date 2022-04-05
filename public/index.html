@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Password Generator</title>
+    <link rel="stylesheet" href="./styles.css">
+   <script src="../src/script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+
+        <label for="night-mode" >Modo noturno</label> <br/>
+        <div id="night-mode-Container">
+            <input id="night-mode-on" class="lamp" onclick="changeMode" type="button" aria-label="night-mode" name="night-mode"  value="On"/>
+        </div>
+        <h1 id="title">Mini Password Generator</h1>
+        
+        <div id='generator'>
+            <input type="text" id="password-Viewer" id="pass-screen"><br>
+
+            <input type="button" value="Gerar Senha" id="code-generator">
+            
+        </div>
+    </div>
+        
+</body>
+</html>
