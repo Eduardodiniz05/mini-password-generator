@@ -9,17 +9,18 @@
    <script src="../src/script.js" defer></script>
 </head>
 <body>
-    <div id="container">
+    <div id="container" >
 
         <label for="night-mode" >Modo noturno</label> <br/>
-        <div id="night-mode-container">
-            <input id="night-mode-on" class="lamp" onclick="changeMode" type="button" aria-label="night-mode" name="night-mode"  value="on"/>
+        <div id="night-mode-container" onclick="changeMode()" >
+            <input id="night-mode-on"  class="lamp"  type="button" aria-label="night-mode" name="night-mode"  value="on"/>
         </div>
         <h1 id="title">Mini Password Generator</h1>
         
         <div id='generator'>
-            <input type="text" id="password-screen-on" value="teste" disabled> <input  value='3' type="number" min="3" max="16" name="number" id="number">
-            <br>
+
+                <input type="text" id="password-screen-on"  value="teste" disabled> <input  value='3' type="number" min="3" max="16" name="number" id="random-number">
+                <br>
 
             
             <input type="button" value="Gerar Senha" id="code-generator">
