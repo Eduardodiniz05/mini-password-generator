@@ -133,7 +133,7 @@ body #generator #password-screen {
 
 .container-number:hover .prev {
    opacity: 1;
-   left: 3px
+   left: 7px
 }
 
 
@@ -154,10 +154,10 @@ body #generator #password-screen {
 
 .container-number:hover .next {
     opacity: 1;
-    right: 3px;
+    right: 7px;
 }
 
-#box .span-number {
+#box span {
     position: absolute;
     display: block;
     top: 10px;
@@ -170,6 +170,10 @@ body #generator #password-screen {
     font-size: 24px;
     font-weight: 700;
     user-select: none;
+}
+
+#box span:nth-child(6) {
+    display: initial;
 }
 
 
