@@ -1,84 +1,73 @@
-/* seletor universal */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+html {
+    height: 100%;
+    font-family: 'Montserrat';
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    --black-color:#000000;
+    --white-color: #FFFFFF;
+    --blue-color:  #0077FF;
 }
+
+
 /* container de todo projeto */
 #container {
-    flex-direction: column;
-    text-align: center;
-    color: #000;
-    margin-left: 22em;
-    margin-top: 20em;
-    max-width: 700px;
+    color: var(--black-color);
+    max-width: 750px;
     height: 500px;
-    border: 2px solid #000;
-    background-color: #FFF;
+    border: 2px solid var(--black-color);
+    background-color: var(--white-color);
 }
-#container-off {
-    flex-direction: column;
-    text-align: center;
-    color: #FFF;
-    margin-left: 22em;
-    margin-top: 20em;
-    max-width: 700px;
-    height: 500px;
-    border: 2px solid #FFF;
-    background-color: #000;
-}
+
 
 /* night mode on/off */
 
-#night-mode-container {
-    margin-top: 1em;
-    width: 70px;
-    height: 40px;
-    background-image: linear-gradient( to right,#000 50%, #fff 50% );
-    border: 2px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 25%;
-    margin-left: 19.8em;
-    font-weight: bold;
-    font-size: 16px;
+
+input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+label {
     cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
 }
 
-#night-mode-container-off {
-    margin-top: 1em;
-    width: 70px;
-    height: 40px;
-    background-image: linear-gradient( to right,#000 50%, #fff 50% );
-    border: 2px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border-radius: 25%;
-    margin-left: 19.8em;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
+label::after {
+    content: " ";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--white-color);
+    border-radius:90px;
+    transition: 0.3s;
 }
 
-#night-mode-on {
-    width: 35px;
-    height: 40px;
-    border-radius: 25%;
-    color: #FFF;
-    background-color: #000;
-    cursor: pointer;
+input:checked + label {
+    background-color: var(--blue-color);
 }
 
-#night-mode-off {
-    width: 35px;
-    height: 40px;
-    border-radius: 25%;
-    color: #000;
-    background-color: #FFF;
-    cursor: pointer;
+input:checked + label::after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
 }
+
+label:active::after {
+    width: 25px;
+}
+
+
 
 
 #title {
@@ -97,36 +86,96 @@
     margin-left: 10.5em;  
 }
 
-body #generator #password-screen-on {
-    width: 20em;
+body #generator #password-screen {
+    width: 8em;
     height: 3em;
     background-color: gray;
-    color: #fff;
-    letter-spacing: 10px;
-    font-size: 18px;
-    text-align: center;
-}
-body #generator #password-screen-off {
-    width: 20em;
-    height: 3em;
-    background-color: gray;
-    color: #000;
-    letter-spacing: 10px;
-    font-size: 18px;
+    color: var(--white-color);
+    font-size: 15px;
     text-align: center;
 }
 
-#number {
-    margin-top: 15px;
-    width: 5em;
-    height: 3em;
-    margin-left: 11em;
+.container-number {
+    margin-top: 3em;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    min-height: 4vh;
+    color: var(--white-color);
+    background: var(--black-color);
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: 0.5s;
+
 }
+
+.container-number:hover {
+    width: 75px;
+    border: 2px solid rgba(255, 255, 255, 1);
+
+}
+
+.container-number .prev {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--white-color);
+    border-left: 2px solid var(--white-color);
+    transform: translateY(-50%) rotate(315deg);
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container-number:hover .prev {
+   opacity: 1;
+   left: 3px
+}
+
+
+.container-number .next {
+     position: absolute;
+     top: 50%;
+     right: 5px;
+     display: block;
+     width: 10px;
+     height: 10px;
+     border-top: 2px solid var(--white-color);
+     border-left: 2px solid var(--white-color);
+     transform: translateY(-50%) rotate(135deg);
+     cursor: pointer;
+     opacity: 0;
+     transition: 0.5s;
+}
+
+.container-number:hover .next {
+    opacity: 1;
+    right: 3px;
+}
+
+#box .span-number {
+    position: absolute;
+    display: block;
+    top: 10px;
+    left: 1px;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    display: none;
+    color: #00DEFF;
+    font-size: 24px;
+    font-weight: 700;
+    user-select: none;
+}
+
 
 
 #code-generator {
     margin-top: 2em;
-    margin-left: 11em;  
     width: 6em;
     height: 6em;
     cursor: pointer;
@@ -134,3 +183,4 @@ body #generator #password-screen-off {
     background-color: rgb(6, 245, 149);
     border-radius: 50%;
 }
+

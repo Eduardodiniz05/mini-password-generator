@@ -10,16 +10,22 @@
 </head>
 <body>
     <div id="container" >
-
-        <label for="night-mode" >Modo noturno</label> <br/>
-        <div id="night-mode-container" onclick="changeMode()" >
-            <input id="night-mode-on"  class="lamp"  type="button" aria-label="night-mode" name="night-mode"  value="on"/>
+        <div id="night-mode-container">
+            <label for="night-mode">Light/Dark</label>
+            <input id="night-mode-on"  class="lamp"  type="checkbox"  name="night-mode"  />
         </div>
         <h1 id="title">Mini Password Generator</h1>
         
         <div id='generator'>
 
-                <input type="text" id="password-screen-on"  value="teste" disabled> <input  value='3' type="number" min="3" max="16" name="number" id="random-number">
+                <input type="text" id="password-screen"  value="teste" disabled> 
+                <div class="container-number">
+                    <span class="prev"></span>
+                    <span class="next"></span>
+                    <div id="box">
+                        <span class="span-number">0</span>
+                    </div>
+                </div>
                 <br>
 
             
