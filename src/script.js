@@ -15,15 +15,11 @@ for(i = 3; i < 36; i++) {
       spanNumber.appendChild(span);
 }
 
-let num = numbers.getElementsByTagName('span');
+let num = spanNumber.getElementsByTagName('span');
 
 let index = 0;
 
-function prevNum() {
-   num[index].style.display = 'none';
-   index = (index - 1 +  num.length) % num.length;
-   num[index].style.display = 'initial';
-}
+
 
 function nextNum() {
    num[index].style.display = 'none';
@@ -31,7 +27,11 @@ function nextNum() {
    num[index].style.display = 'initial';
 }
 
-
+function prevNum() {
+   num[index].style.display = 'none';
+   index = (index - 1 +  num.length) % num.length;
+   num[index].style.display = 'initial';
+}
 
 
 
